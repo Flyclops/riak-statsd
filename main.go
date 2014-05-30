@@ -128,7 +128,7 @@ func sendRiakMetrics(conn *net.UDPConn, metrics *[]string) error {
 	data := []byte(strings.Join(*metrics, "\n"))
 	_, err := conn.Write(data)
 	if err != nil {
-		log.Println("Error sending metrics: %v", err)
+		log.Printf("Error sending metrics: %v\n", err)
 	}
 	return nil
 }
